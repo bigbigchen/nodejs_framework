@@ -4,12 +4,13 @@ var fs = require("fs");
 
 //打印静态文件
 function output(file2){
-	file2 = "public/"+file2;
+	var file_origin = file2;
+	file2 = "./public/"+file2;
 	try{
 		var stats = fs.statSync(file2);
 		if(stats.isDirectory()){
-			file2 += "/index.html"
-			return output(file2);
+			file_origin += "/index.html"
+			return output(file_origin);
 		}
 	}catch(e){
 		return false;
