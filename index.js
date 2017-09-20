@@ -1,6 +1,6 @@
 
-var server = require("./server");
-var router = require("./router");
+var server = require("./framework/server");
+var router = require("./framework/router");
  
 server.start(router.route);
 
