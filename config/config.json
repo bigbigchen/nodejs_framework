@@ -1,0 +1,34 @@
+{
+	"urlManager":{
+		"/":"index/index",
+		"/index.html":"index/index",
+		"/user/register.html":"user/login/register",
+		"/user/login.html":"user/login/index",
+		"/user/my.html":"user/my/index"
+	},
+
+  "keywords": [
+    "config",
+    "configure",
+    "configuration",
+    "production",
+    "development",
+    "yml",
+    "yaml",
+    "toml"
+  ],
+  "dependencies": {
+    "chalk": "2.1.0",
+    "js-yaml": "3.9.1",
+    "lodash": "4.17.4",
+    "optimist": "0.6.1",
+    "resolve": "1.4.0",
+    "toml": "2.3.2"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nswbmw/config-lite.git"
+  }
+}
+
