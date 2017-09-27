@@ -1,17 +1,12 @@
 var index = {};
-index.run = function(action, get){
-	try{
-		return index.index(get);
-	}catch(e){
-		return "error run()";
-	}
+
+
+index.index = function (data){
+	data.data = {};
+	data.data.name = "chenxiang";
+	data.data.title = "宇宙联合总裁";
+	return data.tpl.display(data.tpl_path,data.data);
 }
 
 
-
-index.index = function (get){
-	return "hiiiiiiiiiiiiiiiiiiiii";
-}
-
-
-exports.run = index.run;
+exports.index = index.index;

@@ -26,7 +26,8 @@ function display(tpl_path,tpl_data){
 
 	var pattern=new RegExp("^<%.*?%>");
 	res.t = ' '+ res.content.match(pattern);
-	var regx = /<%.*?%>/g;
+	//var regx = /<%.*?%>/g;
+	var regx = /<%[\s\S]*?%>/g;
 	//获得所有非代码标签(html)
 	var htmls = res.content.split(regx);
 
@@ -36,6 +37,7 @@ function display(tpl_path,tpl_data){
 	var marks_runable = [];//转化为真正可执行的代码
 	marks_runable.push('var marks_codes=[]; ')  ; 
 	marks_runable.push('function get(data){ ')  ; 
+	marks_runable.push('marks_codes=[]; ')  ; 
 	var tti=0;//counter
 	while( tt = regx.exec(res.content) ){
 		marks.push(tt[0]);
@@ -69,7 +71,7 @@ function display(tpl_path,tpl_data){
 
 	var tpl_obj = require("../"+tpl_caches_file);
 	res.output = tpl_obj.get(tpl_data);
-	return res;
+	return res.output.join("\n");
 
 
 }
