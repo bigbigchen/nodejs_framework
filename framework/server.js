@@ -6,7 +6,7 @@ var util = require('util');
 
 function start(route) {
 	function onRequest(request, response) {
-		response.writeHead(200, {"Content-Type": "text/html"});
+		response.writeHead(200, {"Content-Type": "text/html;charset=UTF-8"});
 		response.write(route(request));
 		//response.end(util.inspect(url.parse(request.url, true)));
 		//response.end(util.inspect(request));
